@@ -22,6 +22,7 @@ const Navigation = () => {
 
 
 const Container = styled.div`  
+    padding: 0px 5px 0px 5px;
     height: 115px;
     background-color: yellow;
     a {
@@ -32,19 +33,27 @@ const Container = styled.div`
         }
         float: left;
         color: black;
+        font-size: 22px;
         padding: 12px;
         border-radius: 12px;
         text-align: center;
         text-decoration: none;
     }
     a:hover {
-        background-color: #ddd;
+        
     }
 `;
 
 const Manu = styled.div`
-    a {
+        
+        margin-top: 2em;
         float: right;
+    
+    a {
+        
+    }
+    a:hover{
+        background-color: #ddd;
     }
 `
 
