@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGooglePlay, faAppStore } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -6,24 +8,34 @@ const HeroConteiner = () => {
     return (
         <Container>
             <TextSite>
-                <h1>Instant video consultation from the best Doctors</h1>
+                <h1>Instant video consultation from <br /> the best Doctors</h1>
+                <br />
+                <br />
                 <p>Download and register on our app for free safe for all your family</p>
-
+                <br />
+                <br />
                 <Button>
                     <a href="/#">Find a doctor now</a>
                 </Button>
+                <br /><br />
                 <hr />
-                <span>a</span>
+                <span>or</span>
                 <hr />
+                <br /><br />
                 <DownloadGoogle>
+                
                     <a href="/#">
-                        <span>Download on the</span>
+                        <span>
+                        <FontAwesomeIcon icon={faGooglePlay} size="2x"/>
+                             Download on the</span>
                         <h3>Google Play</h3>
                     </a>
                 </DownloadGoogle>
                 <DownloadAppale>
                     <a href="/#">
-                        <span>Download on the</span>
+                        <span>
+                        <FontAwesomeIcon icon={faAppStore} size="2x"/>
+                            Download on the</span>
                         <h3>App Store</h3>
                     </a>
                 </DownloadAppale>
@@ -37,28 +49,81 @@ const HeroConteiner = () => {
 
 const Container = styled.div`
     display: flex;
+    flex-direction: row;
     padding: 0px 25px 0px 25px;
     height: 500px;
+
+    @media (max-width: 1284px) {
+        flex-direction: column;
+    }
 `;
 const TextSite = styled.div`
+    padding-top: 205px;
+    text-align: center;
+    margin: auto;
+    
 
 `;
 
 const Button =styled.button`
+    cursor: pointer;
+    border: 1px solid black;
+    height: 32px;
+    width: 200px;
+    background-image: linear-gradient(to right, RGB(5, 183, 242), RGB(33, 150, 252)) ;
 
+    a{
+        text-decoration: none;
+        color: white;
+    }
 `;
 
 const DownloadGoogle =styled.button`
-
+    background-color: black;
+    height: 70px;
+    width: 170px;
+    border-radius: 7px;
+    
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    span {
+        text-align: center;
+    }
 `;
 
+
+
+
 const DownloadAppale =styled.button`
+    background-color: black;
+    height: 70px;
+    width: 170px;
+    border-radius: 7px;
+    margin-left: 10px;
+    a{
+        text-decoration: none;
+        color: white;
+    }
     
 `;
 
 const ImageSite = styled.div`
+    width: 70%;
+
+    @media (max-width: 1284px) {
+       width: 100%;
+
+       img {
+           width: 100%;
+       }
+    }
+
     img {
-        width: 100vh;
+        width: 100%;
+
+
     }
 
 `;
