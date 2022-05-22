@@ -61,6 +61,10 @@ const TextSite = styled.div`
     padding-top: 205px;
     text-align: center;
     margin: auto;
+
+    h1 {
+        font-size: 58px
+    }
     
 
 `;
@@ -68,13 +72,15 @@ const TextSite = styled.div`
 const Button =styled.button`
     cursor: pointer;
     border: 1px solid black;
-    height: 32px;
-    width: 200px;
+    border-radius: 74px;
+    height: 52px;
+    width: 300px;
     background-image: linear-gradient(to right, RGB(5, 183, 242), RGB(33, 150, 252)) ;
-
+    
     a{
         text-decoration: none;
         color: white;
+        font-size: 32px
     }
 `;
 
