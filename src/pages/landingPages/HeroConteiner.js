@@ -51,7 +51,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     padding: 0px 25px 0px 25px;
-    height: 500px;
+    height: 100%;
 
     @media (max-width: 1284px) {
         flex-direction: column;
