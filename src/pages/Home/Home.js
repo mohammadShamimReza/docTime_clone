@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroConteiner from '../landingPages/HeroConteiner';
 import JustInFewTips from '../landingPages/JustInFewTips';
+import ThreeEasySteps from '../landingPages/ThreeEasySteps';
 import WhenUseDocTime from '../landingPages/WhenUseDocTime';
 import WhyUseDotTime from '../landingPages/WhyUseDotTime';
 
@@ -14,6 +15,7 @@ const Home = () => {
             <WhyUseDotTime />
             <JustInFewTips />
             <WhenUseDocTime />
+            <ThreeEasySteps />
         </>
     );
 };

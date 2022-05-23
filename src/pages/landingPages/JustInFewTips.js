@@ -102,6 +102,7 @@ line-height: 24px;
 const ImageArea = styled.div`
     width: 40%;
     img{
+        margin-top: 25px;
         width: 70%;
         @media (max-width: 1248px){
      width: 100%;  
