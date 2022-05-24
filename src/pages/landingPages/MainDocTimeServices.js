@@ -44,13 +44,17 @@ const Textarea = styled.div`
     }
     p{
         font-size: 17.6px;
+        line-height: 26.4px;
+        color: #3B4966;
     }
 `;
 
 const Texts = styled.div`
+    width: 700px;
+@media (max-width: 1286px){
     text-align: center;
     width: 500px;
-    
+}
 `;
 
 const ImageArea = styled.div`
