@@ -64,5 +64,11 @@ const Feactures = styled.div`
 `;
 const Steps = styled.div`
     width: 400px;
+    h2 {
+        color: #0C0B59;
+    }
+    p {
+        color: #3B4966;;
+    }
 `;
 export default WhenUseDocTime;

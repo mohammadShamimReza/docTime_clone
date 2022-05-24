@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const ThreeEasySteps = () => {
     return (
-        <Container>
+        <Container id='howIt_works'>
             <Header>
                 <h1>Three easy stepS!</h1>
                 <br /><br />
@@ -18,18 +18,20 @@ const ThreeEasySteps = () => {
                 </ImageArea>
                 <TextArea>
                     <Steps>
-                        <img src="./images/camera-solid.svg" alt="" />
-                        <h1>Search Your Doctor</h1>
+                        <img src="./images/camera-solid.svg" alt="" /><br /><br />
+                        <h1>Search Your Doctor</h1><br />
                         <p>Search your doctor by specialty or doctor name. Choose the right doctor for you by viewing their profile, rating & experience.</p>
                     </Steps>
+                    <br /><br />
                     <Steps>
-                    <img src="./images/searchengin-brands.svg" alt="" />
-                        <h1>Consult live on VideoCall</h1>
+                    <img src="./images/searchengin-brands.svg" alt="" /><br /><br />
+                        <h1>Consult live on VideoCall</h1><br />
                         <p>Once you pay the required doctor fee, you will be joined to the queue. Doctor will make a secured video call to do the consultation.</p>
                     </Steps>
+                    <br /><br />
                     <Steps>
-                    <img src="./images/newspaper-solid.svg" alt="" />
-                        <h1>Instant Prescription</h1>
+                    <img src="./images/newspaper-solid.svg" alt="" /><br /><br />
+                        <h1>Instant Prescription</h1><br />
                         <p>Once the video consultation is complete, the doctor will upload the prescription. You can download the prescription immediately or later.</p>
                     </Steps>
                 </TextArea>
@@ -59,22 +61,36 @@ const Header = styled.div`
 `;
 
 const Main = styled.div`
+    margin-top: 66px;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 60px;
+    @media (max-width: 1284px){
+        flex-direction: column;
+    }
 `;
 const ImageArea = styled.div`
-
+   
 `;
 const TextArea = styled.div`
-    width: 50%;
+    h1{
+        color: #0C0B52;
+    }
+    p{
+        font-size: 17.6px;
+        line-height: 26.4px;
+        color: #3B4966;
+    }
     img {
         width: 50px;
-        display: inline;
         background-color: linear-gradient(to right, RGB(41, 108, 166), RGB(43, 169, 237));
     }
 `;
-const Steps = styled.div``;
+const Steps = styled.div`
+    text-align: center;
+    width: 500px;
+`;
 
 
 export default ThreeEasySteps;
