@@ -1,20 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "../shared/Navigation";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
 const FAQS = () => {
+  const [close, setClose] = useState(true);
+
+  const openFunc = () => {
+    if (close) {
+      setClose(false)
+    }
+    else {
+      setClose(true)
+    }
+    console.log(close);
+  }
+
   return (
     <>
       <Navigation />
 
       <Container>
+        <HeadingTitle>
+          <h1>Frequently asked questions</h1>
+        </HeadingTitle>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>What is DocTime?</h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               DocTime is an online based medical consultation service where
@@ -24,10 +39,10 @@ const FAQS = () => {
           </Answer>
         </Steps>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>What do we treat?</h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               Common health issue Ask anything you would normally ask your GP.
@@ -47,10 +62,10 @@ const FAQS = () => {
           </Answer>
         </Steps>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>How does it work?</h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               Patients can register on our app and are able to take consultation
@@ -64,10 +79,10 @@ const FAQS = () => {
           </Answer>
         </Steps>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>Who provides consultation on DocTime?</h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               Only certified MBBS doctors can provide consultation via the
@@ -76,10 +91,10 @@ const FAQS = () => {
           </Answer>
         </Steps>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>Are the registered doctors verified?</h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               Yes, all our panel of doctors are verified. We verify their
@@ -90,10 +105,10 @@ const FAQS = () => {
           </Answer>
         </Steps>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>When are the doctors available for consultation?</h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               Doctors are available according to their time availability. Our
@@ -103,10 +118,10 @@ const FAQS = () => {
           </Answer>
         </Steps>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>Can we select a doctor of our own choice?</h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               Yes, certainly, you can select any doctor who is registered in our
@@ -119,10 +134,10 @@ const FAQS = () => {
           </Answer>
         </Steps>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>How much do I need to pay for the consultation?</h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               This varies from doctor to doctor. Different doctors have
@@ -133,10 +148,10 @@ const FAQS = () => {
           </Answer>
         </Steps>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>How do I make payment?</h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               .You can make payment online using bKash, rocket, Debit card,
@@ -145,10 +160,10 @@ const FAQS = () => {
           </Answer>
         </Steps>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>Are there free consultations available?</h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               .If any doctor wants they can set their fess to 0. In this case
@@ -159,13 +174,13 @@ const FAQS = () => {
           </Answer>
         </Steps>
         <Steps>
-          <Qustion>
+          <Question onClick= {openFunc}>
             <h2>
               If I decide to cancel my consultation after making payment, how do
               I get a refund?
             </h2>
             <FontAwesomeIcon icon={faPlus} />
-          </Qustion>
+          </Question> 
           <Answer>
             <p>
               If you decides no to get the consultation before the doctor dial
@@ -181,14 +196,36 @@ const FAQS = () => {
 };
 
 const Container = styled.div`
-  width: 800px;
-  margin: 150px auto 200px auto;
+  width: 944px;
+  margin: 100px auto 200px auto;
+
+`;
+
+const HeadingTitle = styled.div`
+  height: 142px;
+  margin: 0 0 8px 0;
+  padding: 48px 0 24 0;
+  h1 {
+    font-size: 59px;
+    font-weight: 500;
+    line-height: 70.8px;
+    text-align: left;
+    color: #0c0b52;
+  }
 `;
 
 const Steps = styled.div`
-
+  border-bottom: 1px solid #DEE4FF;
 `;
-const Qustion = styled.div`
+const Question = styled.div`
+  height: 60px;
+  cursor: pointer;
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    color: #0C0B52;
+  }
   display: flex;
   justify-content: space-between;
 `;
