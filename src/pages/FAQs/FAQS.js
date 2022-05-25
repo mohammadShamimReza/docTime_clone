@@ -181,17 +181,19 @@ const FAQS = () => {
 };
 
 const Container = styled.div`
-
+  width: 800px;
+  margin: 150px auto 200px auto;
 `;
 
 const Steps = styled.div`
 
 `;
 const Qustion = styled.div`
-
+  display: flex;
+  justify-content: space-between;
 `;
 const Answer = styled.div`
-
+  display: none;
 `;
 
 export default FAQS;
