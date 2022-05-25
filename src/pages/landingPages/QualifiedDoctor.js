@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const QualifiedDoctor = () => {
     return (
-       <Constainer>
+       <Constainer id='qualified_Dotor'>
            <TextArea>
                 <h1>Are You a Qualified Doctor</h1>
                 <span>Join the forefront of digital healthcare</span><br /><br /><br /><br />
@@ -45,6 +45,9 @@ const TextArea = styled.div`
         font-size: 17.6px;
         line-height: 26.4px;
         color: #3B4966;
+    }
+    a {
+        color: white;
     }
 `;
 

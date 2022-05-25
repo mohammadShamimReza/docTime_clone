@@ -12,7 +12,7 @@ const Navigation = () => {
             
             <Manu>
                 <HashLink smooth to="#howIt_works" >How DocTime Works</HashLink>
-                <Link to="/#">ForDoctors</Link>
+                <HashLink smooth to="#qualified_Dotor">ForDoctors</HashLink>
                 <Link to="/#">DocTime for Enterprises</Link>
                 <Link to="/#">About Us</Link>
                 <Link to="/#">FAQs</Link>
