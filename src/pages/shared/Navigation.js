@@ -11,11 +11,11 @@ const Navigation = () => {
             <a href="#default" className="logo"><img src="./images/logo.png" alt="" /></a>
             
             <Manu>
-                <HashLink smooth to="#howIt_works" >How DocTime Works</HashLink>
-                <HashLink smooth to="#qualified_Dotor">ForDoctors</HashLink>
+                <HashLink smooth to="/#howIt_works" >How DocTime Works</HashLink>
+                <HashLink smooth to="/#qualified_Dotor">ForDoctors</HashLink>
                 <Link to="/#">DocTime for Enterprises</Link>
                 <Link to="/#">About Us</Link>
-                <Link to="/#">FAQs</Link>
+                <Link to="/FAQs">FAQs</Link>
                 <Link to="/#">LogIN</Link>
                 <ManuWrapper>
                 <ManuIcon>
