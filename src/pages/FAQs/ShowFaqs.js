@@ -24,7 +24,7 @@ const ShowFaqs = ({ faq }) => {
 };
 
 const Question = styled.div`
-  height: 60px;
+  height: 30px;
   cursor: pointer;
   h2 {
     font-size: 18px;
