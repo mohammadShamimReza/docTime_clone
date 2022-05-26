@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const FormPage = () => {
-    const handleLoginForm = () => {
-      
+  const handleLoginForm = (e) => {
+      e.preventDefault();
+      console.log('submitted')
     };
     
     const handleOnChange = (e) => {
@@ -21,7 +22,7 @@ const FormPage = () => {
       <form onSubmit={handleLoginForm}>
         <input
           type="email"
-          name="email"
+          name="Email"
           placeholder="Email or Phone Number"
           id=""
           onBlur={handleOnChange}
@@ -30,11 +31,12 @@ const FormPage = () => {
         <br />
         <input
           type="password"
-          name="password"
+          name="Password"
           placeholder="Password *"
           id=""
           onChange={handleOnChange}
         />
+        <Input type="submit" value="Submit" />
       </form>
     </Container>
   );
@@ -60,6 +62,31 @@ const Container = styled.div`
   input:hover {
     box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
   }
+`;
+
+const Input = styled.input.attrs({
+  type: "submit",
+  value: "Submit",
+})`
+
+  margin-top: 20px;
+  background: #00aec9;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  width: 100%;
+  border-radius: 5px;
+  height: 35px;
+  border-color: transparent;
+  box-shadow: 0px;
+  outline: none;
+  transition: 0.15s;
+  text-align: center;
+  &:active {
+    background-color: #f1ac15;
+  }
+  box-shadow: RGBA(58, 132, 255, 0.5) 0px 6px 10px;
 `;
 
 export default FormPage;
