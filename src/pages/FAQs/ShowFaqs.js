@@ -36,6 +36,7 @@ const Question = styled.div`
   justify-content: space-between;
 `;
 const Answer = styled.div`
+  margin-top: 25px;
 p {
     color: #212529;
     line-height: 24px;
