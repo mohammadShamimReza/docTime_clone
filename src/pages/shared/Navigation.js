@@ -74,6 +74,7 @@ const Manu = styled.div`
 `;
 
 const Button = styled.button`
+    font-size: 20px;
   margin-top: -10px;
   cursor: pointer;
   color: white;
