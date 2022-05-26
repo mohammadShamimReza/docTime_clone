@@ -34,8 +34,9 @@ const ImageArea = styled.div`
   }
 `;
 const FormArea = styled.div`
+  margin-top: 350px;
   h2 {
-    text-align: right;
+    text-align: left;
     font-size: 30px;
     font-weight: 500;
     line-height: 36px;
