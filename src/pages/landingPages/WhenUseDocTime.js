@@ -36,6 +36,7 @@ display: flex;
 gap: 200px;
 
     @media (max-width: 1284px){
+        
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -51,8 +52,11 @@ width: 50%;
     }
 `;
 
-const Textarea =styled.div`
-    width: 50%;
+const Textarea = styled.div`
+  width: 50%;
+  @media (max-width: 1284px) {
+    width: 100%;
+  }
 `;
 const Feactures = styled.div`
     width: 100%;
@@ -63,12 +67,15 @@ const Feactures = styled.div`
     }
 `;
 const Steps = styled.div`
-    width: 400px;
-    h2 {
-        color: #0C0B59;
-    }
-    p {
-        color: #3B4966;;
-    }
+  width: 400px;
+  h2 {
+    color: #0c0b59;
+  }
+  p {
+    color: #3b4966;
+  }
+  
+
+  
 `;
 export default WhenUseDocTime;

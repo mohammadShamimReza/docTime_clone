@@ -67,13 +67,13 @@ const Manu = styled.div`
   a:hover {
     background-color: whitesmoke;
   } 
-  Link {
+  a {
     @media (max-width: 1285px) {
       display: none;
       background-color: red;
     }
   }
-  Link:hover {
+  a:hover {
     background-color: #ddd;
   }
 `;
@@ -96,7 +96,15 @@ const Button = styled.button`
   box-shadow: RGBA(58, 132, 255, 0.5) 0px 6px 10px;
 `;
 
-const ManuWrapper = styled.div``;
+const ManuWrapper = styled.div`
+  @media (min-width: 1284px) {
+    display: none;
+  }
+
+  @media (max-width: 1285px) {
+    display: block;
+  }
+`;
 
 const ManuIcon = styled.div`
   width: 35px;
@@ -105,13 +113,7 @@ const ManuIcon = styled.div`
   margin: 6px 0;
   transition: 0.4s;
 
-  @media (min-width: 1284px) {
-    display: none;
-  }
-
-  @media (max-width: 1285px) {
-    display: block;
-  }
+ 
 `;
 
 export default Navigation;

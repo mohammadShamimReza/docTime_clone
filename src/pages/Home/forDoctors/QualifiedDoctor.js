@@ -35,14 +35,20 @@ const QualifiedDoctor = () => {
 };
 
 const Constainer = styled.div`
-  margin-top: 300px;
+  margin-top: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1284px) {
+      flex-direction: column;
+    }
 `;
 
 const TextArea = styled.div`
   width: 700px;
+  @media (max-width: 1284px) {
+    width: 100%;
+  }
   h1 {
     color: #0c0b52;
     font-size: 59px;
