@@ -19,13 +19,11 @@ const Login = () => {
   );
 };
 const Container = styled.div`
-  /* background-color: hsl(195, 25%, 90%); */
   margin-top: 95px;
   display: flex;
 `;
 const ImageArea = styled.div`
   width: 60%;
-  /* margin: 0 auto 0 auto; */
   img {
     width: 900px;
     @media (max-width: 1286px){

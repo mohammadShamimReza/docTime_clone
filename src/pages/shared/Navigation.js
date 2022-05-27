@@ -19,7 +19,7 @@ const Navigation = () => {
           <HashLink smooth to="/qualified_Dotor">
             ForDoctors
           </HashLink>
-          <Link to="/#">DocTime for Enterprises</Link>
+          <Link to="/forEnterprise">DocTime for Enterprises</Link>
           <Link to="/#">About Us</Link>
           <Link to="/faqs">FAQs</Link>
           <Link to="/login/formpage">

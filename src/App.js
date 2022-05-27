@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
+import EnterpriseDocTime from "./pages/DocTimeforEnterprice/EnterpriseDocTime";
 import FAQS from "./pages/FAQs/FAQS";
 import Doctorsfile from "./pages/Home/forDoctors/Doctorsfile";
 import Home from "./pages/Home/Home";
@@ -18,6 +19,7 @@ function App() {
           <Route path="faqs" element={<FAQS />} />
           <Route path="howdoctime_works" element={<WorksOfDocTime />} />
           <Route path="qualified_Dotor" element={<Doctorsfile />} />
+          <Route path="forEnterprise" element={<EnterpriseDocTime />} />
           <Route path="login" element={<Login />}>
             <Route path="formpage" element={<FormPage />} />
             <Route path="register" element={<Register />} />
