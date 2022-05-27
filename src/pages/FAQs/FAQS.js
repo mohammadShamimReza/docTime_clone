@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navigation from "../shared/Navigation";
 import ShowFaqs from "./ShowFaqs";
 import styled from "styled-components";
 
@@ -16,7 +15,6 @@ const FAQS = () => {
 
   return (
     <>
-      <Navigation />
       <Container>
         <HeadingTitle>
           <h1>Frequently asked questions</h1>

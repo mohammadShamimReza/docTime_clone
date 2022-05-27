@@ -1,25 +1,25 @@
 import React from "react";
+import { Outlet } from "react-router";
 import styled from "styled-components";
-import Navigation from "../shared/Navigation";
-import FormPage from "./FormPage";
+import loginImg from "../../img/login_img.png";
 
 const Login = () => {
   return (
     <>
-      <Navigation />
       <Container>
         <ImageArea>
-          <img src="./images/login_img.png" alt="login_image" />
+          <img src={loginImg} alt="login_image" />
         </ImageArea>
         <FormArea>
-          <h2>Welcome back</h2>
-                  <FormPage />
-            </FormArea>
+              <Outlet />
+        </FormArea>
+       
       </Container>
     </>
   );
 };
 const Container = styled.div`
+  /* background-color: hsl(195, 25%, 90%); */
   margin-top: 95px;
   display: flex;
 `;
@@ -34,14 +34,8 @@ const ImageArea = styled.div`
   }
 `;
 const FormArea = styled.div`
-  margin-top: 350px;
-  h2 {
-    text-align: left;
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 36px;
-    color: #4285F4;
-  }
+  margin-top: 180px;
+  
 `;
 
 

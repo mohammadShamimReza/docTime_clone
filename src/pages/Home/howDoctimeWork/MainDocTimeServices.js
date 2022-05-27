@@ -6,7 +6,7 @@ const MainDocTimeServices = () => {
         <Container>
             <Textarea>
                 <Texts>
-                <h1>Mani Doctime Services</h1>
+                <h1>Main Doctime Services</h1>
                 <p>DocTime is an online medical service app where patients can get 24/7 video consultation from doctors. DocTime uses 256 bit encryption to secure the video consultation. Patient can keep their previous consultation history and view online prescriptions.</p><br /><br /><br />
                 <p>Doctor can join the platform using our simple on boarding process. We verify every doctor to make sure only BMDC authorised doctors are providing consultation using latest technologies.</p>
                 </Texts>
