@@ -1,0 +1,101 @@
+[
+  {
+    "id": "01",
+    "name": "General Physician"
+  },
+  {
+    "id": "02",
+    "name": "General Physician"
+  },
+   {
+        "id": "03",
+        "name": "Nephrology / Kidney"
+    },
+    
+     {
+        "id": "04",
+        "name": "Psychiatry"
+    },
+    
+     {
+        "id": "05",
+        "name": "Pediatrics / Child Care"
+    },
+    
+     {
+        "id": "06",
+        "name": "Cardiology / Heart"
+    },
+    
+     {
+        "id": "07",
+        "name": "Obstetrics"
+    },
+    
+     {
+        "id": "08",
+        "name": "Rheumatology"
+    },
+    
+     {
+        "id": "09",
+        "name": "Gynaecology"
+    },
+    
+     {
+        "id": "10",
+        "name": "Ophthalmology / Eye"
+    },
+    
+     {
+        "id": "11",
+        "name": "ENT / Ear, Nose and Throat"
+    },
+    
+     {
+        "id": "12",
+        "name": "Urology"
+    },
+    
+     {
+        "id": "13",
+        "name": "Neurology / Brain"
+    },
+    
+     {
+        "id": "14",
+        "name": "Dentistry / Dental Care"
+    },
+     {
+        "id": "15",
+        "name": "Parasitology"
+    },
+    {
+        "id": "16",
+        "name": "Chiropractic"
+    },{
+        "id": "17",
+        "name": "Pulmonology / Lungs"
+    },{
+        "id": "18",
+        "name": "Endocrinology / Diabetes"
+    },{
+        "id": "19",
+        "name": "Podiatry"
+    },{
+        "id": "20",
+        "name": "Dermatology"
+    },{
+        "id": "21",
+        "name": "Herbal medicine"
+    },{
+        "id": "22",
+        "name": "Occupational therapy"
+    },{
+        "id": "23",
+        "name": "Oncology"
+    },{
+        "id": "24",
+        "name": "Vascular Surgery"
+    }
+]
