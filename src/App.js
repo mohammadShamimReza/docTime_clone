@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
+import AuthProvider from "./Context/AuthContext/AuthProvider";
 import EnterpriseDocTime from "./pages/DocTimeforEnterprice/EnterpriseDocTime";
 import FAQS from "./pages/FAQs/FAQS";
 import Doctorsfile from "./pages/Home/forDoctors/Doctorsfile";
@@ -13,19 +14,21 @@ import Navigation from "./pages/shared/Navigation";
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Navigation />}>
-          <Route index element={<Home />} />
-          <Route path="faqs" element={<FAQS />} />
-          <Route path="howdoctime_works" element={<WorksOfDocTime />} />
-          <Route path="qualified_Dotor" element={<Doctorsfile />} />
-          <Route path="forEnterprise" element={<EnterpriseDocTime />} />
-          <Route path="login" element={<Login />}>
-            <Route path="formpage" element={<FormPage />} />
-            <Route path="register" element={<Register />} />
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Navigation />}>
+            <Route index element={<Home />} />
+            <Route path="faqs" element={<FAQS />} />
+            <Route path="howdoctime_works" element={<WorksOfDocTime />} />
+            <Route path="qualified_Dotor" element={<Doctorsfile />} />
+            <Route path="forEnterprise" element={<EnterpriseDocTime />} />
+            <Route path="login" element={<Login />}>
+              <Route path="formpage" element={<FormPage />} />
+              <Route path="register" element={<Register />} />
+            </Route>
           </Route>
-        </Route>
-      </Routes>
+        </Routes>
+      </AuthProvider>
     </div>
   );
 }

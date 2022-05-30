@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import UseAuth from "../../Context/AuthContext/UseAuth";
 
 const Register = () => {
+  const { registerUser } = UseAuth();
+  const [registerData, setRegisterData] = useState({});
   const handleLoginForm = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newRegisterData = { ...registerData };
+    newRegisterData[field] = value;
+    setRegisterData(newRegisterData);
     e.preventDefault();
-    console.log("submitted");
   };
 
   const handleOnChange = (e) => {
+    registerUser();
     e.preventDefault();
-    console.log(e.target.value);
   };
   return (
     <Container>
@@ -93,7 +100,6 @@ const Register = () => {
 };
 
 const Container = styled.div`
-
   margin-top: 50px;
   h2 {
     margin-top: 0px;
@@ -106,8 +112,6 @@ const Container = styled.div`
 `;
 
 const FormContainer = styled.div`
-  
-  
   width: 542px;
   h3 {
     font-size: 22.5px;
@@ -129,9 +133,8 @@ const FormContainer = styled.div`
 `;
 
 const NameInput = styled.div`
-    display: flex;
-    gap: 10px;
-
+  display: flex;
+  gap: 10px;
 `;
 
 const DoctorButton = styled.div`

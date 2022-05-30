@@ -69,6 +69,11 @@ const Container = styled.div`
       margin-top: 20px;
     margin-bottom: 20px;
   }
+  @media (max-width: 1284px){
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
 `;
 const Contract = styled.div`
   font-size: 17.6px;
