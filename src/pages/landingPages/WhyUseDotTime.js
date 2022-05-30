@@ -52,8 +52,19 @@ const Textarea = styled.div`
     align-items: center;
     width: 50%;
     h1 {
-        font-size: 40px;
-        margin-bottom: 50px;
+        font-size: 59px;
+        font-weight: 500;
+        line-height: 70px;
+        color: #0C0B52;
+        margin-bottom: 30px;
+
+    }
+    li{
+      font-size: 17.6px;
+      line-height: 26.4px;
+      color: #3b4966;
+      height: 52px;
+      width: 428px;
     }
 
     span {

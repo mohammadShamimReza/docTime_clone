@@ -11,7 +11,7 @@ const HeroConteiner = () => {
                 <h1>Instant video consultation from <br /> the best Doctors</h1>
                 <br />
                 <br />
-                <p>Download and register on our app for free safe for all your family</p>
+                <p>Download and register on our app for <br /> free safe for all your family</p>
                 <br />
                 <br />
                 <Button>
@@ -63,9 +63,14 @@ const TextSite = styled.div`
     margin: auto;
 
     h1 {
+        color: #0C0B52;
         font-size: 58px
     }
-    
+    p{
+        font-size: 32px;
+        line-height: 48px;
+        color: #3B4966;
+    }
 
 `;
 

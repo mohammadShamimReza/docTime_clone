@@ -6,7 +6,8 @@ const Facilities = () => {
     return (
         <Container>
           <Facility>
-            <Number>01</Number>
+          <Number>01</Number>
+          <hr />
             <Name>Verified doctors</Name>
             <Description>
               Every doctors on DocTime platform are BMDC certified. We verify
@@ -14,7 +15,8 @@ const Facilities = () => {
             </Description>
           </Facility>
           <Facility>
-            <Number>02</Number>
+          <Number>02</Number>
+          <hr />
             <Name>Instant video consultation</Name>
             <Description>
               Most of our consultations starts within 10 minutes of making
@@ -22,7 +24,8 @@ const Facilities = () => {
             </Description>
           </Facility>
           <Facility>
-            <Number>03</Number>
+          <Number>03</Number>
+          <hr />
             <Name>Instant video consultation</Name>
             <Description>
               Most of our consultations starts within 10 minutes of making
@@ -30,7 +33,8 @@ const Facilities = () => {
             </Description>
           </Facility>
           <Facility>
-            <Number>04</Number>
+          <Number>04</Number>
+          <hr />
             <Name>Instant electronics prescription</Name>
             <Description>
               As soon as the consultation is complete, doctor will provide the
@@ -39,7 +43,8 @@ const Facilities = () => {
             </Description>
           </Facility>
           <Facility>
-            <Number>05</Number>
+          <Number>05</Number>
+          <hr />
             <Name>Instant electronics prescription</Name>
             <Description>
               As soon as the consultation is complete, doctor will provide the
@@ -48,7 +53,8 @@ const Facilities = () => {
             </Description>
           </Facility>
           <Facility>
-            <Number>06</Number>
+          <Number>06</Number>
+          <hr />
             <Name>Easy payment options</Name>
             <Description>
               Patient can make payment online using our secured payment gateway
@@ -57,7 +63,8 @@ const Facilities = () => {
             </Description>
           </Facility>
           <Facility>
-            <Number>07</Number>
+          <Number>07</Number>
+          <hr />
             <Name>Easy payment options</Name>
             <Description>
               Patient can make payment online using our secured payment gateway
@@ -66,7 +73,8 @@ const Facilities = () => {
             </Description>
           </Facility>
           <Facility>
-            <Number>08</Number>
+          <Number>08</Number>
+          <hr />
             <Name>Better consultation quality</Name>
             <Description>
               Our doctors are committed to provide the best service by spending
@@ -75,7 +83,8 @@ const Facilities = () => {
             </Description>
           </Facility>
           <Facility>
-            <Number>09</Number>
+          <Number>09</Number>
+          <hr />
             <Name>Super fast support</Name>
             <Description>
               Our dedicated customer service team is available to assist you
@@ -91,13 +100,30 @@ const Facilities = () => {
 const Container = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 120px;
+  margin-top: -50px;
+  margin-bottom: 180px;
 `;
 const Facility = styled.div`
-    width: 350px;
+    width: 320px;
 
 `;
-const Number = styled.h1``;
-const Name = styled.h2``;
-const Description = styled.p``;
+const Number = styled.h1`
+    color: #0C0B52;
+`;
+const Name = styled.h2`
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #0C0B52;
+`;
+const Description = styled.p`
+  font-size: 17.6px;
+  line-height: 26.4px;
+  color: #3B4966;
+  margin-top: 15px;
+  height: 131px;
+`;
 
 export default Facilities;
