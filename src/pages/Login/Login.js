@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router";
 import styled from "styled-components";
 import loginImg from "../../img/login_img.png";
+import Footer from "../shared/Footer";
 
 const Login = () => {
   return (
@@ -15,6 +16,7 @@ const Login = () => {
         </FormArea>
        
       </Container>
+      <Footer />
     </>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import styled from "styled-components";
 import logoImg from "../../img/logo.png"
 
@@ -13,14 +12,14 @@ const Navigation = () => {
         </Link>
 
         <Manu>
-          <HashLink smooth to="/howdoctime_works">
+          <Link  to="/howdoctime_works">
             How DocTime Works
-          </HashLink>
-          <HashLink smooth to="/qualified_Dotor">
+          </Link>
+          <Link  to="/qualified_Dotor">
             ForDoctors
-          </HashLink>
+          </Link>
           <Link to="/forEnterprise">DocTime for Enterprises</Link>
-          <Link to="/#">About Us</Link>
+          <Link to="/aboutUs">About Us</Link>
           <Link to="/faqs">FAQs</Link>
           <Link to="/login/formpage">
             <Button>LOg IN</Button>

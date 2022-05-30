@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ShowFaqs from "./ShowFaqs";
 import styled from "styled-components";
+import Footer from "../shared/Footer";
 
 
 const FAQS = () => {
@@ -24,6 +25,7 @@ const FAQS = () => {
           ))}
         
       </Container>
+      <Footer />
     </>
   );
 };

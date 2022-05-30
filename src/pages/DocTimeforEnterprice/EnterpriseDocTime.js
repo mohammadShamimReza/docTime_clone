@@ -1,34 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
 import EnterpricePic from "../../img/EnterprisePic.png"
+import Footer from '../shared/Footer';
 
 const EnterpriseDocTime = () => {
     return (
-      <Container>
-        <TextArea>
-                <h4>Welcome To</h4>
-                <br />
-                <h1>DocTime enterprise healthcare program</h1>
-                <br /><br /><br />
-          <p>
-            DocTime is an online medical service app (Telemedicine) where
-            patients can get doctor consultations on video call and can get
-                    instant online prescriptions.
-            <br />        We have launched this product aiming
-            to the benefits of both Employers and Employees at WIN - WIN basis.
-            We offer employees to collaborate with us to provide their employers
-            unlimited video consultation facilities with doctors for him and his
-            family throughout the month at a very cheap rate.
-                </p>
-                <br /><br /><br />
-                <EnrollButton>
-                    Enroll Now
-                </EnrollButton>
-        </TextArea>
-            <ImageArea>
-                <img src={EnterpricePic} alt="" />
-        </ImageArea>
-      </Container>
+      <>
+        <Container>
+          <TextArea>
+            <h4>Welcome To</h4>
+            <br />
+            <h1>DocTime enterprise healthcare program</h1>
+            <br />
+            <br />
+            <br />
+            <p>
+              DocTime is an online medical service app (Telemedicine) where
+              patients can get doctor consultations on video call and can get
+              instant online prescriptions.
+              <br /> We have launched this product aiming to the benefits of
+              both Employers and Employees at WIN - WIN basis. We offer
+              employees to collaborate with us to provide their employers
+              unlimited video consultation facilities with doctors for him and
+              his family throughout the month at a very cheap rate.
+            </p>
+            <br />
+            <br />
+            <br />
+            <EnrollButton>Enroll Now</EnrollButton>
+          </TextArea>
+          <ImageArea>
+            <img src={EnterpricePic} alt="" />
+          </ImageArea>
+        </Container>
+        <Footer />
+      </>
     );
 };
 

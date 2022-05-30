@@ -4,6 +4,7 @@ import JustInFewTips from '../landingPages/JustInFewTips';
 import WhenUseDocTime from '../landingPages/WhenUseDocTime';
 import WhyUseDotTime from '../landingPages/WhyUseDotTime';
 import Facilities from '../landingPages/Facilities'
+import Footer from '../shared/Footer';
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <JustInFewTips />
             <Facilities />
             <WhenUseDocTime />
+            <Footer />
         </>
     );
 };
