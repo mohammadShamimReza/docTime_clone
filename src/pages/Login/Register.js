@@ -6,7 +6,7 @@ import UseAuth from "../../Context/AuthContext/UseAuth";
 const Register = () => {
   const { registerUser } = UseAuth();
   const [registerData, setRegisterData] = useState({});
-  const handleLoginForm = (e) => {
+  const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
     const newRegisterData = { ...registerData };
@@ -15,8 +15,9 @@ const Register = () => {
     e.preventDefault();
   };
 
-  const handleOnChange = (e) => {
-    registerUser();
+  const handleLoginForm = (e) => {
+    console.log(e.targer.value)
+    registerUser(registerData.name, registerData.email, registerData.password);
     e.preventDefault();
   };
   return (
@@ -42,39 +43,32 @@ const Register = () => {
           <NameInput>
             <input
               type="text"
-              name="FirstNameText"
+              name="name"
               placeholder="First Name"
               id="firstnameId"
               required
-              onBlur={handleOnChange}
+              onBlur={handleOnBlur}
             />
-            <input
-              type="text"
-              name="LastNameText"
-              placeholder="Last Name"
-              id="lastnameId"
-              required
-              onBlur={handleOnChange}
-            />
+            
           </NameInput>
           <br />
           <input
             type="email"
-            name="Email"
+            name="email"
             placeholder="Email or Phone Number"
             id="emailId"
             required
-            onBlur={handleOnChange}
+            onBlur={handleOnBlur}
           />
           <br />
           <br />
           <input
             type="password"
-            name="Password"
+            name="password"
             placeholder="Password *"
             id="PassworkId"
             required
-            onChange={handleOnChange}
+            onChange={handleOnBlur}
           />
           <Input type="submit" value="Submit" />
         </form>
@@ -133,8 +127,6 @@ const FormContainer = styled.div`
 `;
 
 const NameInput = styled.div`
-  display: flex;
-  gap: 10px;
 `;
 
 const DoctorButton = styled.div`

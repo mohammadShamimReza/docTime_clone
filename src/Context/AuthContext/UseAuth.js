@@ -6,4 +6,5 @@ const UseAuth = () => {
     return auth;
 }
 
-export default UseAuth();
+export default UseAuth;
+
