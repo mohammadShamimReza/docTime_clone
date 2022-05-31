@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import UseAuth from "../../Context/AuthContext/UseAuth";
 
 const FormPage = () => {
-  const handleLoginForm = (e) => {
-    e.preventDefault();
-    console.log("submitted");
-  };
-
+  const [loginData, setLoginData] = useState({});
+  const { user, logIn, isLoading, error, googleSingIn } = UseAuth();
   const handleOnChange = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newLoginData = { ...loginData };
+    newLoginData[field] = value;
+    setLoginData(newLoginData);
+      e.preventDefault();
+    };
+  const handleLoginForm = (e) => {
+    logIn(loginData.email, loginData.password);
     e.preventDefault();
-    console.log(e.target.value);
   };
 
-  const handleGoogleAuthentation = (e) => {
-    e.preventDefault();
-    console.log('this is auth')
-  }
+
   return (
     <Container>
       <h2>Welcome back</h2>
@@ -30,32 +33,39 @@ const FormPage = () => {
       <br />
       <br />
       <FormContainer>
-        <form onSubmit={handleLoginForm}>
-          <input
-            type="email"
-            name="Email"
-            placeholder="Email or Phone Number"
-            id="emailId"
-            onBlur={handleOnChange}
-          />
-          <br />
-          <br />
-          <input
-            type="password"
-            name="Password"
-            placeholder="Password *"
-            id="PassworkId"
-            onChange={handleOnChange}
-          />
-          <Input type="submit" value="Submit" />
-        </form>
+        {!isLoading && (
+          <form onSubmit={handleLoginForm}>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email or Phone Number"
+              id="emailId"
+              onBlur={handleOnChange}
+            />
+            <br />
+            <br />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password *"
+              id="PassworkId"
+              onChange={handleOnChange}
+            />
+            <Button type="submit"> logIN</Button>
+          </form>
+        )}
+        {isLoading && <Loading></Loading>}
+        {user?.email && alert("log in successfully")}
+        {error && <span>{error.massage}</span>}
       </FormContainer>
       <Forget>
         <a href="/*">Forget Password ?</a>
       </Forget>
       <br />
       <br />
-      <AuthenticationsGoogle onClick={handleGoogleAuthentation}>Sing in with GOOGLE</AuthenticationsGoogle>
+      <AuthenticationsGoogle onClick={googleSingIn}>
+        Sing in with GOOGLE
+      </AuthenticationsGoogle>
       <Register>
         <h4>
           Don't have an account?{" "}
@@ -99,11 +109,34 @@ const FormContainer = styled.div`
     box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
   }
 `;
+const Loading = styled.div`
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
 
-const Input = styled.input.attrs({
-  type: "submit",
-  value: "Submit",
-})`
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+const Button = styled.button`
   margin-top: 40px;
   background: #00aec9;
   color: #fff;

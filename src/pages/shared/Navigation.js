@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
+import UseAuth from "../../Context/AuthContext/UseAuth";
 import logoImg from "../../img/logo.png"
 
 const Navigation = () => {
+  const {user, logOut} = UseAuth()
   return (
     <>
       <Container>
@@ -12,18 +14,20 @@ const Navigation = () => {
         </Link>
 
         <Manu>
-          <Link  to="/howdoctime_works">
-            How DocTime Works
-          </Link>
-          <Link  to="/qualified_Dotor">
-            ForDoctors
-          </Link>
+          <Link to="/howdoctime_works">How DocTime Works</Link>
+          <Link to="/qualified_Dotor">ForDoctors</Link>
           <Link to="/forEnterprise">DocTime for Enterprises</Link>
           <Link to="/aboutUs">About Us</Link>
           <Link to="/faqs">FAQs</Link>
-          <Link to="/login/formpage">
-            <Button>LOg IN</Button>
-          </Link>
+          {user?.email ? (
+            <Link onClick={logOut} to="/login/formpage">
+              <Button>LOg Out</Button>
+            </Link>
+          ) : (
+            <Link to="/login/formpage">
+              <Button>LOg IN</Button>
+            </Link>
+          )}
           <ManuWrapper>
             <ManuIcon>
               <div className=""></div>

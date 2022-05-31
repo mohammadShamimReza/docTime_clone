@@ -15,7 +15,7 @@ const HeroConteiner = () => {
                 <br />
                 <br />
                 <Button>
-                    <a href="/#">Find a doctor now</a>
+                    <a href="/">Find a doctor now</a>
                 </Button>
                 <br /><br />
                 <hr />

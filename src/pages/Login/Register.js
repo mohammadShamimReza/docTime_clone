@@ -4,20 +4,24 @@ import styled from "styled-components";
 import UseAuth from "../../Context/AuthContext/UseAuth";
 
 const Register = () => {
-  const { registerUser } = UseAuth();
-  const [registerData, setRegisterData] = useState({});
+  const { user, registerUser, isLoading, error } = UseAuth();
+  const [registerData, setRegisterData] = useState({})
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
-    const newRegisterData = { ...registerData };
+    const newRegisterData = { ...registerData }
     newRegisterData[field] = value;
     setRegisterData(newRegisterData);
     e.preventDefault();
   };
 
   const handleLoginForm = (e) => {
-    console.log(e.targer.value)
-    registerUser(registerData.name, registerData.email, registerData.password);
+    if (registerData.password !== registerData.password2) {
+      alert("Your password did not mached"); 
+      return
+    };
+    registerUser(registerData.email, registerData.password)
+    
     e.preventDefault();
   };
   return (
@@ -38,41 +42,55 @@ const Register = () => {
       <h3>Patient Registration</h3>
       <br />
       <br />
-      <FormContainer>
-        <form onSubmit={handleLoginForm}>
-          <NameInput>
+      {!isLoading && (
+        <FormContainer>
+          <form onSubmit={handleLoginForm}>
+            <NameInput>
+              <input
+                type="text"
+                name="name"
+                placeholder="First Name"
+                id="firstnameId"
+                required
+                onBlur={handleOnBlur}
+              />
+            </NameInput>
+            <br />
             <input
-              type="text"
-              name="name"
-              placeholder="First Name"
-              id="firstnameId"
+              type="email"
+              name="email"
+              placeholder="Email or Phone Number"
+              id="emailId"
               required
               onBlur={handleOnBlur}
             />
-            
-          </NameInput>
-          <br />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email or Phone Number"
-            id="emailId"
-            required
-            onBlur={handleOnBlur}
-          />
-          <br />
-          <br />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password *"
-            id="PassworkId"
-            required
-            onChange={handleOnBlur}
-          />
-          <Input type="submit" value="Submit" />
-        </form>
-      </FormContainer>
+            <br />
+            <br />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password *"
+              id="PassworkId"
+              required
+              onChange={handleOnBlur}
+            />
+            <br />
+            <br />
+            <input
+              type="password"
+              name="password2"
+              placeholder="Re type your password"
+              id="PassworkId2"
+              required
+              onChange={handleOnBlur}
+            />
+            <Button type="submit"> Register</Button>
+          </form>
+        </FormContainer>
+      )}
+      {isLoading && <Loading></Loading>}
+      {user?.email && alert("Account created successfully")}
+      {error && <span>{error.massage}</span>}
       <Terms>
         <h3>Accepting Terms & conditions</h3>
         <input type="checkbox" name="" id="" />
@@ -103,6 +121,10 @@ const Container = styled.div`
     line-height: 36px;
     color: #4285f4;
   }
+  span {
+    width: 500px;
+    height: 200px;
+  }
 `;
 
 const FormContainer = styled.div`
@@ -126,6 +148,25 @@ const FormContainer = styled.div`
   }
 `;
 
+const Loading = styled.div`
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  @-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+`;
+
 const NameInput = styled.div`
 `;
 
@@ -144,10 +185,8 @@ const DoctorButton = styled.div`
   }
 `;
 
-const Input = styled.input.attrs({
-  type: "submit",
-  value: "Submit",
-})`
+
+const Button = styled.button`
   margin-top: 40px;
   background: #00aec9;
   color: #fff;
