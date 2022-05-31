@@ -32,10 +32,12 @@ const UseFirebase = () => {
 
   };
 
-  const logIn = (email, password) => {
+  const logIn = (email, password, navigate, location) => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        const from = location.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
         setError("")
       })
       .catch((error) => {

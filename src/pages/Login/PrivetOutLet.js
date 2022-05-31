@@ -1,18 +1,17 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useLocation, Navigate } from 'react-router-dom';
 import styled from "styled-components";
 import UseAuth from '../../Context/AuthContext/UseAuth';
 
 const PrivetOutLet = () => {
     const { user, isLoading } = UseAuth()
     const location = useLocation();
-    {
       isLoading && <Loading></Loading>;
-    }
+    
     return user?.email ? (
       <Outlet />
     ) : (
-      <Navigate to="/login" state={{ from: location }} replace />
+      <Navigate to="/login/formpage" state={{ from: location }} replace />
     );
 };
 

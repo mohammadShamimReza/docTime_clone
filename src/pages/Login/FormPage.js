@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import UseAuth from "../../Context/AuthContext/UseAuth";
 
 const FormPage = () => {
+
+  const navigate = useNavigate();
+  const location = useLocation();
   const [loginData, setLoginData] = useState({});
   const { user, logIn, isLoading, error, googleSingIn } = UseAuth();
   const handleOnChange = (e) => {
@@ -15,7 +18,7 @@ const FormPage = () => {
       e.preventDefault();
     };
   const handleLoginForm = (e) => {
-    logIn(loginData.email, loginData.password);
+    logIn(loginData.email, loginData.password, navigate, location);
     e.preventDefault();
   };
 
