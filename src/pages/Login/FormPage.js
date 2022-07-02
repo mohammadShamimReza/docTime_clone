@@ -4,24 +4,22 @@ import styled from "styled-components";
 import UseAuth from "../../Context/AuthContext/UseAuth";
 
 const FormPage = () => {
-
   const navigate = useNavigate();
   const location = useLocation();
   const [loginData, setLoginData] = useState({});
-  const { user, logIn, isLoading, error, googleSingIn } = UseAuth();
+  const {logIn, isLoading, error, googleSingIn } = UseAuth();
   const handleOnChange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
     const newLoginData = { ...loginData };
     newLoginData[field] = value;
     setLoginData(newLoginData);
-      e.preventDefault();
-    };
+    e.preventDefault();
+  };
   const handleLoginForm = (e) => {
     logIn(loginData.email, loginData.password, navigate, location);
     e.preventDefault();
   };
-
 
   return (
     <Container>
@@ -29,7 +27,7 @@ const FormPage = () => {
       <br />
       <br />
       <br />
-      <h3>Login</h3>
+      <h3>Login First</h3>
       <br />
       <br />
       <hr />
@@ -58,7 +56,7 @@ const FormPage = () => {
           </form>
         )}
         {isLoading && <Loading></Loading>}
-        {user?.email && alert("log in successfully")}
+
         {error && <span>{error.massage}</span>}
       </FormContainer>
       <Forget>
@@ -66,7 +64,7 @@ const FormPage = () => {
       </Forget>
       <br />
       <br />
-      <AuthenticationsGoogle onClick={googleSingIn}>
+      <AuthenticationsGoogle onClick={() => googleSingIn(navigate, location)}>
         Sing in with GOOGLE
       </AuthenticationsGoogle>
       <Register>

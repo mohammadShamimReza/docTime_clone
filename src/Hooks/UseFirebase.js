@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -14,22 +14,20 @@ initializeFirebase();
 
 const UseFirebase = () => {
   const [user, setUser] = useState({});
-  const [error, setError] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
   const registerUser = (email, password) => {
-    setIsLoading(true)
+    setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        setError("")
-        
+        setError("");
       })
       .catch((error) => {
-        setError(error.message)
+        setError(error.message);
       })
       .finally(() => setIsLoading(false));
-
   };
 
   const logIn = (email, password, navigate, location) => {
@@ -38,17 +36,20 @@ const UseFirebase = () => {
       .then((userCredential) => {
         const from = location.state?.from?.pathname || "/";
         navigate(from, { replace: true });
-        setError("")
+        setError("");
       })
       .catch((error) => {
-        setError(error.message)
+        setError(error.message);
       })
       .finally(() => setIsLoading(false));
-  }
+  };
 
-  const googleSingIn = () => {
+  const googleSingIn = (navigate, location) => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
+        const from = location.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
+        setError("");
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
@@ -66,38 +67,36 @@ const UseFirebase = () => {
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       });
-  }
+  };
 
   useEffect(() => {
-   const unSubscribe = onAuthStateChanged(auth, (user) => {
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user)
+        setUser(user);
       } else {
-       setUser({})
+        setUser({});
       }
-   });
+    });
     return () => unSubscribe;
-  }, [auth])
+  }, [auth]);
 
   const logOut = () => {
     setIsLoading(true);
     signOut(auth)
-      .then(() => {
-       
-      })
+      .then(() => {})
       .catch((error) => {
         setError(error.message);
       })
       .finally(() => setIsLoading(false));
-  }
-    return {
-      user,
-      isLoading,
-      registerUser,
-      logIn,
-      googleSingIn,
-      logOut,
-      error
+  };
+  return {
+    user,
+    isLoading,
+    registerUser,
+    logIn,
+    googleSingIn,
+    logOut,
+    error,
   };
 };
 
