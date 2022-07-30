@@ -19,11 +19,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigation />}>
             <Route index element={<Home />} />
-            <Route path="/*" element={<PrivetOutLet />} >
-            <Route path="faqs" element={<FAQS />} />
             <Route path="howdoctime_works" element={<WorksOfDocTime />} />
-            <Route path="qualified_Dotor" element={<Doctorsfile />} />
-            <Route path="forEnterprise" element={<EnterpriseDocTime />} />
+            <Route path="faqs" element={<FAQS />} />
+            <Route path="/*" element={<PrivetOutLet />}>
+              <Route path="qualified_Dotor" element={<Doctorsfile />} />
+              <Route path="forEnterprise" element={<EnterpriseDocTime />} />
             </Route>
             <Route path="login" element={<Login />}>
               <Route path="formpage" element={<FormPage />} />

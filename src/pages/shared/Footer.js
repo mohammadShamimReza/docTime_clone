@@ -53,6 +53,7 @@ const Footer = () => {
 };
 
 const Container = styled.div`
+  margin-top: 88px;
   font-size: 17.6px;
   line-height: 26.4px;
   color: #3b4966;
@@ -66,16 +67,17 @@ const Container = styled.div`
   background-color: whitesmoke;
   height: 400px;
   p {
-      margin-top: 20px;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
-  @media (max-width: 1284px){
+  @media (max-width: 1284px) {
     flex-direction: column;
     height: 100%;
     width: 100%;
   }
 `;
 const Contract = styled.div`
+
   font-size: 17.6px;
   line-height: 26.4px;
   color: #3b4966;
